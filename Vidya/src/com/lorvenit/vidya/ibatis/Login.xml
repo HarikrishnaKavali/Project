@@ -1,0 +1,46 @@
+<!DOCTYPE sqlMap 
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap >
+
+<!-- <typeAlias alias="hari" type="com.form.action.LoginAction"/> -->
+
+<!-- 	<resultMap id="result" class="com.form.action.LoginAction"> -->
+<!-- 		<result property="username" column="username" columnIndex="1" /> -->
+<!-- 		<result property="password" column="password" columnIndex="2"/> -->
+<!-- 	</resultMap> -->
+	<select id="getAll" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+<!-- 		select count(*) from USER_INFO where username=#username# and password = #password# -->
+		select usersmanagment, studentmanagment, 
+        employeemanagment, facultymanagment, batchmanagment, coursemanagment, exammanagment, librarymanagment, labmanagement, username from users_info where username=#username# and password = #password#
+	</select>
+	
+	<select id="getAllu" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select * from users_infosubu where username=#username# 
+	</select>
+	
+	<select id="getAlls" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select * from users_infosubs where username=#username# 
+	</select>
+	<select id="getAlle" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select * from users_infosube where username=#username# 
+	</select>
+	<select id="getAllf" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select * from users_infosubf where username=#username# 
+	</select>
+	<select id="getAllb" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select * from users_infosubb where username=#username# 
+	</select>
+	<select id="getAllc" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select * from users_infosubc where username=#username# 
+	</select>
+	<select id="getAllex" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select * from users_infosubex where username=#username# 
+	</select>
+	<select id="getAllli" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select * from users_infosubli where username=#username# 
+	</select>
+	<select id="getAllla" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select * from users_infosubla where username=#username# 
+	</select>
+</sqlMap>

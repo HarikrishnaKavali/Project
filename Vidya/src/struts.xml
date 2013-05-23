@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    
+    <constant name="struts.i18n.reload" value="true" />    
+    <constant name="struts.custom.i18n.resources" value="com.lorvenit.vidya.properties.ApplicationResources" /> 
+
+    <package name="default" extends="struts-default" namespace="/">
+    
+    <action name="Home">
+            <result >/Home.jsp</result>
+    </action>
+<!--    <===============================LOGIN================================> -->
+    
+    <action name="loginaction" class="com.lorvenit.vidya.login.action.LoginAction" method="execute">
+			<result name="input">/Login.jsp</result>
+			<result name="success">/Menu.jsp</result>
+	</action>
+	
+<!--    <===============================USERS================================> -->
+	<action name="uesrreg" class="com.lorvenit.vidya.users.action.UsersRegistrationAction" method="execute">
+			<result name="input">/users/UserRegistration.jsp</result>
+			<result name="success">/users/UserRegistrationCheck.jsp</result>
+	</action>
+     
+     <action name="usersReg" class="com.lorvenit.vidya.users.action.UsersRegistrationCheckAction" method="execute">
+			<result name="login">/users/UserRegistration.jsp</result>
+			<result name="success">/users/UserRegistration.jsp</result>
+	</action>
+	  
+	   <action name="usersview" class="com.lorvenit.vidya.users.action.UsersViewAction" method="execute">
+			<result name="input">/users/UserView.jsp</result>
+			<result name="success">/users/UserView.jsp</result>
+		</action>
+	
+	   <action name="link" class="com.lorvenit.vidya.users.action.UsersLinkAction" method="execute">
+			<result name="success">/SubModuleMenu.jsp</result>
+		</action>
+		
+		<action name="uesrsupdate" class="com.lorvenit.vidya.users.action.UsersUpdateAction" method="execute">
+			<result name="input">/users/UserUpdate.jsp</result>
+			<result name="success">/users/UserUpdateRetrive.jsp</result>
+		</action>
+		
+		<action name="usersupdateretrive" class="com.lorvenit.vidya.users.action.UsersUpdateRetriveAction" method="execute">
+			<result name="input">/users/UserUpdateRetrive.jsp</result>
+			<result name="success">/users/UserUpdateCheck.jsp</result>
+		</action>
+		
+		<action name="usersUpdate" class="com.lorvenit.vidya.users.action.UsersUpdateCheckAction" method="execute">
+			<result name="login">/users/UserUpdate.jsp</result>
+			<result name="success">/users/UserUpdate.jsp</result>
+		</action>
+		
+		 <action name="usersdelete" class="com.lorvenit.vidya.users.action.UsersViewAction" method="execute">
+			<result name="input">/users/UserDelete.jsp</result>
+			<result name="success">/users/UserDelete.jsp</result>
+		</action>
+		
+		<action name="userdelete" class="com.lorvenit.vidya.users.action.UsersDeleteAction" method="execute">
+			<result name="input">/users/UserDelete.jsp</result>
+			<result name="success">/users/UserDelete.jsp</result>
+		</action>
+ </package>
+ </struts>

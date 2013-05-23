@@ -1,0 +1,115 @@
+
+A {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; FONT: Dream Orphanage Rg; BORDER-LEFT: 0px; CURSOR: pointer; COLOR: gray; BORDER-BOTTOM: 0px; TEXT-DECORATION: none
+}
+DIV.notebook {
+	BORDER-RIGHT: midnightblue thin inset; DISPLAY: none; BORDER-LEFT: midnightblue thin inset; WIDTH: 90%; BORDER-BOTTOM: midnightblue thin inset; HEIGHT: auto; BACKGROUND-COLOR: #ffffff
+}
+TABLE.notebook {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; WIDTH: 100%; BORDER-BOTTOM: 0px
+}
+BODY {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; FONT-FAMILY: Dream Orphanage Rg;
+	BACKGROUND-COLOR: #ffffff
+	
+	 border-top: 1px solid #96d1f8;
+   background: #6b9fbf;
+   background: -webkit-gradient(linear, left top, left bottom, from(#7bb9e3), to(#6b9fbf));
+   background: -webkit-linear-gradient(top, #7bb9e3, #6b9fbf);
+   background: -moz-linear-gradient(top, #7bb9e3, #6b9fbf);
+   background: -ms-linear-gradient(top, #7bb9e3, #6b9fbf);
+   background: -o-linear-gradient(top, #7bb9e3, #6b9fbf);
+   padding: 5px 10px;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 11px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+}
+BODY.Menu {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; FONT-FAMILY: Dream Orphanage Rg;
+	BACKGROUND-COLOR: #ffffff; 
+	}
+BODY.SC{
+	FONT-WEIGHT: BOLD; FONT-SIZE: 10pt; FONT-FAMILY: Dream Orphanage Rg;
+	BACKGROUND-COLOR: #ffffff; COLOR: #000000
+}
+DIV.scrollbar {
+	OVERFLOW: auto; WIDTH: 100%; HEIGHT: 100%
+}
+INPUT {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; FONT-FAMILY: Dream Orphanage Rg
+}
+TEXTAREA {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; FONT-FAMILY: Dream Orphanage Rg
+}
+
+TH.End {
+	FONT-WEIGHT: bold;
+}
+
+BODY.report {
+	FONT: 9pt Dream Orphanage Rg; BACKGROUND-COLOR: white
+}
+TABLE.report {
+	FONT: 9pt Dream Orphanage Rg
+}
+
+TR.row_title {
+	FONT-SIZE: 8pt; BACKGROUND-COLOR: red
+	BACKGROUND-COLOR: red 
+	BORDER-RIGHT: red 2px outset; 
+	BORDER-TOP: red 2px outset; 
+	BORDER-LEFT: red 2px outset; 
+	BORDER-BOTTOM: red 2px outset; 
+
+}
+TH.row_title {
+	FONT-SIZE: 8pt; 
+	BACKGROUND-COLOR: red 
+	BORDER-RIGHT: red 2px outset; 
+	BORDER-TOP: red 2px outset; 
+	BORDER-LEFT: red 2px outset; 
+	BORDER-BOTTOM: red 2px outset; 
+
+}
+
+BODY {
+	FONT-SIZE: 10pt; FONT-FAMILY: Dream Orphanage Rg
+}
+
+FORM {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px
+}
+TD {
+	FONT-SIZE: 10pt; FONT-FAMILY: Dream Orphanage Rg
+}
+
+A {
+	FONT-WEIGHT: bold; FONT-SIZE: 11pt; FONT-FAMILY: Dream Orphanage Rg; TEXT-DECORATION: none
+}
+A:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 11pt; FONT-FAMILY: Dream Orphanage Rg; TEXT-DECORATION: none
+}
+A:active {
+	FONT-WEIGHT: bold; FONT-SIZE: 11pt; FONT-FAMILY: Dream Orphanage Rg; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 11pt; FONT-FAMILY: Dream Orphanage Rg; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 11pt; FONT-FAMILY: Dream Orphanage Rg; TEXT-DECORATION: none
+}
+
+TH.labeltext {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #333333; BACKGROUND-COLOR: #eeeeee
+}
+
+

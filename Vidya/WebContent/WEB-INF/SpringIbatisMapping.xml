@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/krishna" />
+		<property name="username" value="root" />
+		<property name="password" value="krishna" />
+	</bean>
+
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation"
+			value="classpath:com/lorvenit/vidya/ibatis/SqlMapConfig.xml" />
+		<property name="useTransactionAwareDataSource" value="true" />
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+
+	<bean id="sqlMapClientTemplate" class="org.springframework.orm.ibatis.SqlMapClientTemplate">
+		<property name="sqlMapClient"> <ref bean="sqlMapClient" /></property>
+	</bean>
+<!-- <============================================LOGIN==============================================> -->
+	<bean id="LoginDaoImp" class="com.lorvenit.vidya.login.dao.LoginDaoImp">
+		<!-- <property name="dataSource"><ref local="dataSource"/></property> -->
+		<property name="sqlMapClient"><ref local="sqlMapClient" /></property>
+	</bean>
+
+	<bean id="LoginAction" class="com.lorvenit.vidya.login.beans.LoginBeans" autowire="byType"></bean>
+<!-- <==============================================USERS INSERT======================================> -->
+	<bean id="UsersRegistrationDao" class="com.lorvenit.vidya.users.dao.UsersRegistrationDaoImp">
+		<property name="sqlMapClient"><ref local="sqlMapClient" /></property>
+	</bean>
+
+	<bean id="userregistration" class="com.lorvenit.vidya.users.beans.UsersRegistrationBeans" autowire="byType"></bean>
+<!-- <==============================================USERS VIEW======================================> -->
+	<bean id="UsersViewDao" class="com.lorvenit.vidya.users.dao.UsersViewDaoImp">
+		<property name="sqlMapClient"><ref local="sqlMapClient" /></property>
+	</bean>
+	<bean id="list" class="java.util.ArrayList"></bean>
+	
+<!-- <==============================================USERS VIEW======================================> -->
+	<bean id="UsersUpdateDao" class="com.lorvenit.vidya.users.dao.UsersUpdateDaoImp">
+		<property name="sqlMapClient"><ref local="sqlMapClient" /></property>
+	</bean>
+	<!-- <==============================================USERS VIEW======================================> -->
+	<bean id="UsersDeleteDao" class="com.lorvenit.vidya.users.dao.UsersDeleteDaoImp">
+		<property name="sqlMapClient"><ref local="sqlMapClient" /></property>
+	</bean>
+	
+
+</beans>
+

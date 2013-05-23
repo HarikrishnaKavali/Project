@@ -1,0 +1,147 @@
+<!DOCTYPE sqlMap 
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap >
+	<insert id = "insertusers" parameterClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+        insert into users_info(firstname, lastname, username, password, repassword, passwordhint, email, usersmanagment, studentmanagment, 
+        employeemanagment, facultymanagment, batchmanagment, coursemanagment, exammanagment, librarymanagment, labmanagement) 
+        values (#firstname#, #lastname#, #username#, #password#, #repassword#, #passwordhint#, #email#, #usersmanagment#, #studentmanagment#,
+        #employeemanagment#, #facultymanagment#, #batchmanagment#, #coursemanagment#, #exammanagment#, #librarymanagment#, #labmanagement#)
+    </insert>
+    <insert id="insertusersu">
+    	insert into users_infosubu(username, uinsert, uupdate, uview, udelete) values(#username#, #uinsert#, #uupdate#, #uview#, #udelete#)
+    </insert>
+    <insert id="insertuserss">
+    	insert into users_infosubs(username, sinsert, supdate, sview, sdelete) values(#username#, #sinsert#, #supdate#, #sview#, #sdelete#)
+    </insert>
+    <insert id="insertuserse">
+    	insert into users_infosube(username, einsert, eupdate, eview, edelete) values(#username#, #einsert#, #eupdate#, #eview#, #edelete#)
+    </insert>
+    <insert id="insertusersf">
+    	insert into users_infosubf(username, finsert, fupdate, fview, fdelete) values(#username#, #finsert#, #fupdate#, #fview#, #fdelete#)
+    </insert>
+    <insert id="insertusersb">
+    	insert into users_infosubb(username, binsert, bupdate, bview, bdelete) values(#username#, #binsert#, #bupdate#, #bview#, #bdelete#)
+    </insert>
+    <insert id="insertusersc">
+    	insert into users_infosubc(username, cinsert, cupdate, cview, cdelete) values(#username#, #cinsert#, #cupdate#, #cview#, #cdelete#)
+    </insert>
+     <insert id="insertusersex">
+    	insert into users_infosubex(username, exinsert, exupdate, exview, exdelete) values(#username#,#exinsert#, #exupdate#, #exview#, #exdelete#)
+    </insert>
+    <insert id="insertusersli">
+    	insert into users_infosubli(username, liinsert, liupdate, liview, lidelete) values(#username#, #liinsert#, #liupdate#, #liview#, #lidelete#)
+    </insert>
+    <insert id="insertusersla">
+    	insert into users_infosubla(username, lainsert, laupdate, laview, ladelete) values(#username#, #lainsert#, #laupdate#, #laview#, #ladelete#)
+    </insert>
+<!--     <========================================user view==============================================> -->
+	<select id="viewusersd" resultClass="Integer">
+		select count(*) from users_info where username=#username# 
+	</select>
+	
+	<select id="viewusers" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select *from users_info where username=#username# 
+	</select>
+	
+	<select id="viewusers1" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select * from users_infosubu where username=#username# 
+	</select>
+	
+	<select id="viewusers2" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select * from users_infosubs where username=#username# 
+	</select>
+	<select id="viewusers3" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select * from users_infosube where username=#username# 
+	</select>
+	<select id="viewusers4" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select * from users_infosubf where username=#username# 
+	</select>
+	<select id="viewusers5" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select * from users_infosubb where username=#username# 
+	</select>
+	<select id="viewusers6" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select * from users_infosubc where username=#username# 
+	</select>
+	<select id="viewusers7" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select * from users_infosubex where username=#username# 
+	</select>
+	<select id="viewusers9" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select * from users_infosubli where username=#username# 
+	</select>
+	<select id="viewusers8" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select * from users_infosubla where username=#username# 
+	</select>
+	
+	<!--     <========================================user update==============================================> -->
+	<select id="userupdateretrive" resultClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+		select *from users_info where username=#username# 
+	</select>
+<!--     <========================================user update==============================================> -->	
+	<update id="updateusers"  parameterClass="com.lorvenit.vidya.users.beans.UsersRegistrationBeans">
+	update users_info set firstname = #firstname#,lastname = #lastname#,password = #password#,repassword = #repassword#,passwordhint = #passwordhint#,
+	email = #email#,usersmanagment = #usersmanagment#,studentmanagment = #studentmanagment#,employeemanagment = #employeemanagment#,
+	facultymanagment = #facultymanagment#,batchmanagment = #batchmanagment#,coursemanagment = #coursemanagment#,
+	exammanagment = #exammanagment#,librarymanagment = #librarymanagment#,labmanagement = #labmanagement# WHERE username = #username#
+	</update>
+    <update id="updateusersu">
+    update users_infosubu set uinsert = #uinsert#,uupdate = #uupdate#,uview = #uview#,udelete = #udelete# WHERE username = #username#;
+    </update>
+    <update id="updateuserss">
+    update users_infosubs set sinsert = #sinsert#,supdate = #supdate#,sview = #sview#,sdelete = #sdelete# WHERE username = #username#;
+     </update>
+    <update id="updateuserse">
+     update users_infosube set einsert = #einsert#,eupdate = #eupdate#,eview = #eview#,edelete = #edelete# WHERE username = #username#;
+     </update>
+    <update id="updateusersf">
+     update users_infosubf set finsert = #finsert#,fupdate = #fupdate#,fview = #fview#,fdelete = #fdelete# WHERE username = #username#;
+     </update>
+    <update id="updateusersb">
+     update users_infosubb set binsert = #binsert#,bupdate = #bupdate#,bview = #bview#,bdelete = #bdelete# WHERE username = #username#;
+     </update>
+    <update id="updateusersc">
+      update users_infosubc set cinsert = #cinsert#,cupdate = #cupdate#,cview = #cview#,cdelete = #cdelete# WHERE username = #username#;
+      </update>
+     <update id="updateusersex">
+       update users_infosubex set exinsert = #exinsert#,exupdate = #exupdate#,exview = #exview#,exdelete = #exdelete# WHERE username = #username#;
+     </update>
+    <update id="updateusersli">
+     update users_infosubli set liinsert = #liinsert#,liupdate = #liupdate#,liview = #liview#,lidelete = #lidelete# WHERE username = #username#;
+      </update>
+    <update id="updateusersla">
+     update users_infosubla set lainsert = #lainsert#,laupdate = #laupdate#,laview = #laview#,ladelete = #ladelete# WHERE username = #username#;
+    </update>
+    <!--     <========================================user delete==============================================> -->	
+	<delete id="deleteusers" >
+	delete from users_info WHERE username = #username#
+	</delete>
+	<delete id="deleteusersu" >
+	delete from users_infosubu WHERE username = #username#
+	</delete>
+	<delete id="deleteuserss" >
+	delete from users_infosubs WHERE username = #username#
+	</delete>
+	<delete id="deleteuserse" >
+	delete from users_infosube WHERE username = #username#
+	</delete>
+	<delete id="deleteusersf" >
+	delete from users_infosubf WHERE username = #username#
+	</delete>
+	<delete id="deleteusersb" >
+	delete from users_infosubb WHERE username = #username#
+	</delete>
+	<delete id="deleteusersc" >
+	delete from users_infosubc WHERE username = #username#
+	</delete>
+	<delete id="deleteusersex" >
+	delete from users_infosubex WHERE username = #username#
+	</delete>
+	<delete id="deleteusersli" >
+	delete from users_infosubli WHERE username = #username#
+	</delete>
+	<delete id="deleteusersla" >
+	delete from users_infosubla WHERE username = #username#
+	</delete>
+	
+	
+</sqlMap>
