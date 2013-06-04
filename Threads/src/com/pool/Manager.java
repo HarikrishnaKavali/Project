@@ -13,9 +13,9 @@ public static void main(String[] args) {
 	u3.start();
 	u4.start();
 	Util.sleep(50000);
-	u1.stop();
-	u2.stop();
-	u3.stop();
+//	u1.stop();
+//	u2.stop();
+//	u3.stop();
 	pm.release();
 	System.out.println("End the Game");
 }
