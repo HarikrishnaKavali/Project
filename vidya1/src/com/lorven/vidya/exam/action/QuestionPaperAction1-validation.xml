@@ -1,0 +1,28 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+<validators>
+	<field name="examcode">
+		<field-validator type="requiredstring">
+			<message key="error.exam.code" />
+		</field-validator>
+	</field>
+	<field name="conductingDate">
+		<field-validator type="required">
+			<message key="error.exam.date" />
+		</field-validator>
+		<field-validator type="date">
+			<message key="error.exam.dateformat" />
+		</field-validator>
+	</field>
+
+	<field name="examHours">
+		<field-validator type="requiredstring">
+			<message key="error.exam.hour" />
+		</field-validator>
+	</field>
+	<field name="examMinutes">
+		<field-validator type="requiredstring">
+			<message key="error.exam.minutes" />
+		</field-validator>
+	</field>
+
+</validators>

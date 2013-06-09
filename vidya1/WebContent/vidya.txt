@@ -1,0 +1,11 @@
+create table exam(examcode varchar(20),examtype varchar(20),subject varchar(20),
+inchargeid varchar(20),date date);
+
+create table exam_details(examcode varchar(20),examdate date,time_hours varchar(3),
+time_minutes varchar(3),question varchar(200),answer_type varchar(25),correct_answer varchar(10),
+option1 varchar(200),option2 varchar(200),option3 varchar(200),option4 varchar(200),
+option5 varchar(200),eassay_type_answer varchar(1000),primary key(examcode,question));
+
+
+
+

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="org.gjt.mm.mysql.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/vidya" />
+		<property name="username" value="root" />
+		<property name="password" value="sudha" />
+	</bean>
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation"
+			value="classpath:com/lorven/vidya/ibaties/SqlMapConfig.xml" />
+		<property name="useTransactionAwareDataSource" value="true" />
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+
+	<bean id="sqlMapClientTemplate" class="org.springframework.orm.ibatis.SqlMapClientTemplate">
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient" />
+		</property>
+	</bean>
+
+	<bean id="uploadExam" class="com.lorven.vidya.exam.dao.QuestionPaperDemo"
+		autowire="byName">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="questionPaper" class="com.lorven.vidya.exam.action.UploadQuestionPaperAction"
+		autowire="byName" />
+
+
+	<bean id="insertExamDao" class="com.lorven.vidya.exam.dao.InsertExamDao"
+		autowire="byName">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+	<bean id="questionPaperActions" class="com.lorven.vidya.exam.action.QuestionPaperAction2" />
+
+	<!-- ================================= Reading question papers ======================================= -->
+
+	<bean id="readingQuestionPapers" class="com.lorven.vidya.exam.dao.RetrivingQuestionPaperDao"
+		autowire="byName">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+	<bean id="readingAllQuestionPapers" class="com.lorven.vidya.exam.dao.ReadingAllQuestionDao"
+		autowire="byName">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+
+
+
+
+</beans>

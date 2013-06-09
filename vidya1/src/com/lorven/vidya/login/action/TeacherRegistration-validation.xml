@@ -1,0 +1,109 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<field name="firstname">
+		<field-validator type="requiredstring">
+			<message>username is required</message>
+		</field-validator>
+
+		
+        <field-validator type="stringlength">
+             <param name="minLength">10</param>
+             <param name="maxLength">10</param>
+             <param name="trim">true</param>
+             <message>Your purchase code needs to be 10 characters long</message>
+        </field-validator>
+    
+
+	</field>
+	<field name="lastname">
+		<field-validator type="requiredstring">
+			<message>password is required</message>
+		</field-validator>
+		
+	<!-- 	<field-validator type="stringLength">
+			<param name="minLength">1</param>
+			<param name="maxLength">30</param>
+			<message>Last name must be min 1 and max 30 characters only</message>
+		</field-validator>
+ -->	</field>
+
+	<field name="dob">
+		<field-validator type="requiredstring">
+			<message>password is required</message>
+		</field-validator>
+		
+		<field-validator type="date">
+			<message>please select correct date</message>
+		</field-validator>
+	</field>
+
+	<field name="joindate">
+		<field-validator type="requiredstring">
+			<message>Joininig is required</message>
+		</field-validator>
+		
+		<field-validator type="date">
+			<message>please select correct date</message>
+		</field-validator>
+	</field>
+
+	<field name="experience">
+		<field-validator type="requiredstring">
+			<message>Experience is required</message>
+		</field-validator>
+		
+		<field-validator type="double">
+			<param name="minExclusive">0.0</param>
+			<param name="maxExclusive">50.0</param>
+			<message>Experience must be between ${minExclusive} and
+				${maxExclusive} (exclusive)</message>
+		</field-validator>
+	</field>
+
+	<field name="email">
+		<field-validator type="requiredstring">
+			<message>E-mail is required</message>
+		</field-validator>
+		
+		<field-validator type="email">
+			<message>Please enter valid email</message>
+		</field-validator>
+
+	<!-- 	<field-validator type="stringLength">
+			<param name="minLength">4</param>
+			<param name="maxLength">50</param>
+			<message>E-mail must be min 4 and max 50 characters only</message>
+		</field-validator> -->
+	</field>
+
+	<field name="phoneno">
+		<field-validator type="requiredstring">
+			<message>Phone no is required</message>
+		</field-validator>
+		<field-validator type="int">
+			<message>Please enter numeric digits only</message>
+		</field-validator>
+		<!-- <field-validator type="stringLength">
+			<param name="minLength">10</param>
+			<param name="maxLength">10</param>
+			<message>Phone number must be 10 digits only</message>
+		</field-validator> -->
+	</field>
+	<field name="address">
+		<field-validator type="requiredstring">
+			<message>Address is required</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="expression">[0-9A-Za-z@#()-,./ ]</param>
+			<message>Please enter valid address</message>
+		</field-validator>
+		<!-- <field-validator type="stringLength">
+			<param name="minLength">5</param>
+			<param name="maxLength">150</param>
+			<message>address must be min 5 and max 150 charecters only</message>
+		</field-validator> -->
+	</field>
+
+
+</validators>

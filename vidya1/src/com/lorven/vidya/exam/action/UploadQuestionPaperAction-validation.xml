@@ -1,0 +1,34 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+<validators>
+	<field name="examcode">
+		<field-validator type="requiredstring">
+			<message>Exam code is required</message>
+		</field-validator>	
+	</field>
+	<field name="examtype">
+		<field-validator type="requiredstring">
+			<message>Exam type is required</message>
+		</field-validator>	
+	</field>
+	<field name="subject">
+		<field-validator type="requiredstring">
+			<message>subject is required</message>
+		</field-validator>	
+	</field>
+	<field name="incharge">
+		<field-validator type="requiredstring">
+			<message>incharge id is required</message>
+		</field-validator>	
+	</field>
+	<field name="date">
+		<field-validator type="date">
+			<message>date is required</message>
+		</field-validator>	
+	</field>
+	<field name="uploadFile">
+		<field-validator type="required">
+			<message>Please select file</message>
+		</field-validator>	
+	</field>
+
+</validators>

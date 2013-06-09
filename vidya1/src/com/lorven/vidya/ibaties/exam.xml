@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap>
+	<!-- <select id="insertExamDetails" resultClass="Integer"> insert into exam(examcode,examtype,subject,inchargeid,date) 
+		values(#examcode#,#examtype#,#subject#,#incharge#,#date#) </select> -->
+
+	<select id="insertExamDetails">
+		insert into
+		exam_details(examcode,examdate,time_hours,time_minutes,question,answer_type,correct_answer,option1,option2,option3,option4,option5,eassay_type_answer)
+		values(#examcode#,#conductingDate#,#examHours#,#examMinutes#,#question#,#answerType#,#correctAnswer#,#option1#,#option2#,#option3#,#option4#,#option5#,#eassayAnswer#)
+	</select>
+	<select id="readingQuestionPapers"
+		resultClass="com.lorven.vidya.exam.beans.ReadingQuestionPaperBean">
+		select
+		examcode,examdate,time_hours,time_minutes,question,answer_type,correct_answer,option1,option2,option3,option4,option5 from exam_details where examcode=#questionPaperCode#
+	</select>
+	<select id="readingAllQuestionPapers"
+		resultClass="com.lorven.vidya.exam.beans.ReadingQuestionsBean">
+		select
+		examcode,examdate,time_hours,time_minutes,question,answer_type,correct_answer,option1,option2,option3,option4,option5 from exam_details where examcode=#questionPaperCode#
+	</select>
+	
+</sqlMap>
+
+

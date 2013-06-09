@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.reload" value="true" />
+	<constant name="struts.custom.i18n.resources"
+		value="com.lorven.vidya.properties.ApplicationResources" />
+	<constant name="struts.devMode" value="true" />
+
+	<package name="default" extends="struts-default" namespace="/">
+		<action name="login" class="com.lorven.vidya.login.action.LoginAction">
+			<result name="success">/success.jsp</result>
+			<result name="failure">/failure.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+
+		<action name="teacherRegistrationAction"
+			class="com.lorven.vidya.login.action.TeacherRegistration">
+			<result name="suceess">/success.jsp</result>
+			<result name="input">/teachers/TeacherRegistration.jsp</result>
+		</action>
+		<action name="questionPaperAction"
+			class="com.lorven.vidya.exam.action.UploadQuestionPaperAction">
+			<interceptor-ref name="exception" />
+			<interceptor-ref name="alias" />
+			<interceptor-ref name="servletConfig" />
+			<interceptor-ref name="prepare" />
+			<interceptor-ref name="i18n" />
+			<interceptor-ref name="chain" />
+			<interceptor-ref name="debugging" />
+			<interceptor-ref name="profiling" />
+			<interceptor-ref name="scopedModelDriven" />
+			<interceptor-ref name="modelDriven" />
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">1024000</param>
+				<param name="allowedTypes">text/plain,image/png,image/gif,image/jpeg,image/pjpeg</param>
+			</interceptor-ref>
+			<interceptor-ref name="checkbox" />
+			<interceptor-ref name="staticParams" />
+			<interceptor-ref name="actionMappingParams" />
+			<interceptor-ref name="params">
+				<param name="excludeParams"> dojo\..*,^struts\..*</param>
+			</interceptor-ref>
+			<interceptor-ref name="conversionError" />
+			<interceptor-ref name="validation">
+				<param name="excludeMethods"> input,back,cancel,browse</param>
+			</interceptor-ref>
+			<interceptor-ref name="workflow">
+				<param name="excludeMethods"> input,back,cancel,browse</param>
+			</interceptor-ref>
+
+			<result name="success">/success.jsp</result>
+			<result name="failure">/failure.jsp</result>
+			<result name="input">/exam/UploadQuestionPaper.jsp</result>
+		</action>
+
+		<action name="uploadAction" class="FileUploading">
+
+			<interceptor-ref name="exception" />
+			<interceptor-ref name="alias" />
+			<interceptor-ref name="servletConfig" />
+			<interceptor-ref name="prepare" />
+			<interceptor-ref name="i18n" />
+			<interceptor-ref name="chain" />
+			<interceptor-ref name="debugging" />
+			<interceptor-ref name="profiling" />
+			<interceptor-ref name="scopedModelDriven" />
+			<interceptor-ref name="modelDriven" />
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">1024000</param>
+				<param name="allowedTypes">text/plain,image/png,image/gif,image/jpeg,image/pjpeg</param>
+			</interceptor-ref>
+			<interceptor-ref name="checkbox" />
+			<interceptor-ref name="staticParams" />
+			<interceptor-ref name="actionMappingParams" />
+			<interceptor-ref name="params">
+				<param name="excludeParams"> dojo\..*,^struts\..*</param>
+			</interceptor-ref>
+			<interceptor-ref name="conversionError" />
+			<interceptor-ref name="validation">
+				<param name="excludeMethods"> input,back,cancel,browse</param>
+			</interceptor-ref>
+			<interceptor-ref name="workflow">
+				<param name="excludeMethods"> input,back,cancel,browse</param>
+			</interceptor-ref>
+
+			<result name="success">/success.jsp</result>
+			<result name="input">/fileupload.jsp</result>
+		</action>
+
+		<action name="writingQuestionPaper"
+			class="com.lorven.vidya.exam.action.QuestionPaperAction1">
+			<result name="input">/exam/CreateQuestionPaper1.jsp</result>
+			<result name="success">/exam/CreateQuestionPaper2.jsp</result>
+
+		</action>
+
+		<action name="writingQuestionPaperAction"
+			class="com.lorven.vidya.exam.action.QuestionPaperAction2" method="insertExamDetails">
+
+			<result name="input">/exam/CreateQuestionPaper2.jsp</result>
+			<result name="success">/success.jsp</result>
+			<result name="failure">/exam/CreateQuestionPaper2.jsp</result>
+			<!-- <exception-mapping result="error" exception="java.lang.Exception"></exception-mapping> -->
+		</action>
+
+		<action name="retrivingQuestionPaper"
+			class="com.lorven.vidya.exam.action.RetrivingQuestionsAction">
+			<result name="input">/exam/RetrivingQuestionPaper.jsp</result>
+			<result name="success">/success.jsp</result>
+			<result name="failure">/failure.jsp</result>
+
+		</action>
+		
+		<action name="retrivingAllQuestionPaperDetails"
+			class="com.lorven.vidya.exam.action.RetrivingAllQuestionsAction">			
+			<result name="success">/success.jsp</result>
+			<result name="failure">/failure.jsp</result>
+
+		</action>
+		
+	</package>
+
+
+</struts>

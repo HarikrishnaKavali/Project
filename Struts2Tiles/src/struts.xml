@@ -1,0 +1,18 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="default" extends="struts-default">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<action name="*Page" method="{1}" class="net.roseindia.action.TilesAction">
+			<result name="home" type="tiles">home</result>
+			<result name="aboutUs" type="tiles">aboutUs</result>
+			<result name="contactUs" type="tiles">contactUs</result>
+			<result name="registration" type="tiles">registration</result>
+		</action>
+	</package>
+</struts>
